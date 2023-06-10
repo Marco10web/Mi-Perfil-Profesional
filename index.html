@@ -5,33 +5,78 @@
     <title>Mi página web</title>
     <style>
         /* Estilos CSS aquí */
+
+        /*ABARCA AQUI EL PROCESO DE QUE SE VEA HORIZONTAL*/
+        .navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            background-color: #DDD;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: #AAA;
+            color: #FFF;
+        }
+        /*FINALIZA AQUI EL PROCESO DE QUE SE VEA HORIZONTAL*/
+
+
         #encabezado {
-        background-color: #1F2C4A; /* Cambia #FFA500 por el color deseado */
-        padding: 20px;
-        color: #1F2C4A; /* Cambia #FFF por el color deseado para el texto */
+            background-color: #1F2C4A; /* Cambia #FFA500 por el color deseado */
+            padding: 20px;
+            color: #1F2C4A; /* Cambia #FFF por el color deseado para el texto */
         }
 
         #derechos-autor {
-        background-color: #1F2C4A;
-        color: #1F2C4A;
-        padding: 10px;
-        text-align: center;
+            background-color: #1F2C4A;
+            color: #1F2C4A;
+            padding: 10px;
+            text-align: center;
         }
 
-
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
     </style>
 </head>
 
 <body>
     <header id="encabezado">
-        <img src= "https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80" alt="Encabezado">
+        <img src= "https://images.unsplash.com/photo-1489875347897-49f64b51c1f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Encabezado">
         <h1>Marco Carrera</h1>
-        <nav>
-          <ul>
-              <li><a href="#"><i class="fas fa-home"></i> Inicio</a></li>
-              <li><a href="#"><i class="fas fa-user"></i> Acerca de</a></li>
-              <li><a href="#"><i class="fas fa-folder-open"></i> Proyectos</a></li>
-              <li><a href="#"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <nav class="navbar">
+          <ul class="navbar-nav">
+              <li class="nav-item">
+                  <a class="nav-link" href="#inicio">Inicio</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#acerca">Acerca de</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#proyectos">Proyectos</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#contacto">Contacto</a>
+              </li>
           </ul>
       </nav>
     </header>
@@ -61,7 +106,7 @@
         <!-- Contenido de la sección Proyectos -->
         <ul>
           <li>
-              <a href= https://replit.com/@marcocarrera/Python-MC#main.py>
+              <a href= "https://replit.com/@marcocarrera/Python-MC#main.py">
                   <img src="ruta/de/la/imagen1.jpg" alt="Proyecto 1">
                   <h3>Proyecto 1: Piedra, Papel o Tijeras</h3>
               </a>
@@ -113,9 +158,8 @@
     </section>
 
     <footer id="derechos de autor">
-    <p>&copy; © MARCO CARRERA | Derechos reservados 2023</p>
+    <p>&copy; MARCO CARRERA | Derechos reservados 2023</p>
     </footer>
 </body>
 
 </html>
-
