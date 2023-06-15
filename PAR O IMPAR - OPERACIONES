@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MARCO DESARROLLADOR WEB</title>
+</head>
+<body>
+      <h1>Par o Impar</h1>
+      <form method="post" action="<?php echo         htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="numero">Ingresa un número:</label>
+        <input type="number" id="numero" name="numero" required>
+        <input type="submit" value="Verificar">
+      </form>
+    <?php
+    // Código PHP
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $numero = $_POST["numero"];
+        if (is_numeric($numero)) {
+            if ($numero % 2 == 0) {
+              echo "<p>El número $numero es par.</p>";
+            } else {
+              echo "<p>El número $numero es impar.</p>";
+            }
+        } else {
+          echo "<p>Ingresa un número válido.</p>";
+        }
+    }
+    ?>
+</body>
+<body>
+    <h1>Operaciones Matemáticas</h1>
+
+    <h2>Suma</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="num1">Primer número:</label>
+        <input type="number" id="num1" name="num1" required><br>
+        <label for="num2">Segundo número:</label>
+        <input type="number" id="num2" name="num2" required><br>
+        <input type="submit" name="sumar" value="Sumar">
+    </form>
+
+    <?php
+    // Código PHP - Suma
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["sumar"])) {
+        $numero1 = $_POST["num1"];
+        $numero2 = $_POST["num2"];
+        $suma = $numero1 + $numero2;
+        echo "<p>La suma de $numero1 y $numero2 es: $suma</p>";
+    }
+    ?>
+
+    <h2>Resta</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="num3">Primer número:</label>
+        <input type="number" id="num3" name="num3" required><br>
+        <label for="num4">Segundo número:</label>
+        <input type="number" id="num4" name="num4" required><br>
+        <input type="submit" name="restar" value="Restar">
+    </form>
+
+    <?php
+    // Código PHP - Resta
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["restar"])) {
+        $numero3 = $_POST["num3"];
+        $numero4 = $_POST["num4"];
+        $resta = $numero3 - $numero4;
+        echo "<p>La resta de $numero3 y $numero4 es: $resta</p>";
+    }
+    ?>
+
+    <h2>Multiplicación</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="num1">Primer número:</label>
+        <input type="number" id="num1" name="num1" required><br>
+        <label for="num2">Segundo número:</label>
+        <input type="number" id="num2" name="num2" required><br>
+        <input type="submit" name="multiplicar" value="Multiplicar">
+    </form>
+
+    <?php
+    // Código PHP - Multiplicación
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["multiplicar"])) {
+        $numero1 = $_POST["num1"];
+        $numero2 = $_POST["num2"];
+        $multiplicacion = $numero1 * $numero2;
+        echo "<p>El resultado de la multiplicación de $numero1 y $numero2 es: $multiplicacion</p>";
+    }
+    ?>
+
+    <h2>División</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <label for="num3">Dividendo:</label>
+        <input type="number" id="num3" name="num3" required><br>
+        <label for="num4">Divisor:</label>
+        <input type="number" id="num4" name="num4" required><br>
+        <input type="submit" name="dividir" value="Dividir">
+    </form>
+
+    <?php
+    // Código PHP - División
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["dividir"])) {
+        $dividendo = $_POST["num3"];
+        $divisor = $_POST["num4"];
+
+        if ($divisor != 0) {
+            $division = $dividendo / $divisor;
+            echo "<p>El resultado de la división de $dividendo entre $divisor es: $division</p>";
+        } else {
+            echo "<p>Error: No se puede dividir entre cero.</p>";
+        }
+    }
+    ?>
+</body>
+</html>
